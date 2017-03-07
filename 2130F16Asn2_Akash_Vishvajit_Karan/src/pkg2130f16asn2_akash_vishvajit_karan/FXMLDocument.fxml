@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="781.0" prefWidth="1076.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg2130f16asn2_akash_vishvajit_karan.FXMLDocumentController">
+    <children>
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <Label layoutX="223.0" layoutY="11.0" prefHeight="98.0" prefWidth="828.0" text="Welcome to AVK Flight Planner" textAlignment="CENTER" textFill="#2816cd" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Book Antiqua Bold" size="55.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="667.0" fitWidth="1077.0" layoutY="116.0">
+         <image>
+            <Image url="@images/flight1320x742.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="139.0" fitWidth="288.0" layoutX="-24.0" layoutY="-9.0">
+         <image>
+            <Image url="@images/AVK_Logo.png" />
+         </image>
+      </ImageView>
+      <StackPane layoutX="33.0" layoutY="141.0" prefHeight="616.0" prefWidth="1016.0">
+         <children>
+            <ImageView fitHeight="569.0" fitWidth="977.0" opacity="0.54">
+               <image>
+                  <Image url="@images/back.jpg" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="pane1" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <RadioButton fx:id="oneWay" layoutX="62.0" layoutY="60.0" mnemonicParsing="false" onMouseClicked="#onOneWay" selected="true" text="One Way" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="tripType" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="roundTrip" layoutX="347.0" layoutY="60.0" mnemonicParsing="false" onMouseClicked="#onRoundTrip" onMouseDragExited="#onRoundTrip" text="Round Trip" textFill="WHITE" toggleGroup="$tripType">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </RadioButton>
+                  <ComboBox fx:id="flightCmboBx" layoutX="62.0" layoutY="128.0" prefHeight="31.0" prefWidth="216.0" promptText="Origin to Destination" />
+                  <Label layoutX="62.0" layoutY="205.0" prefHeight="27.0" prefWidth="216.0" text="Number of Passengers" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="numOfPassengers" layoutX="350.0" layoutY="203.0" prefHeight="31.0" prefWidth="180.0" promptText="1" />
+                  <Label layoutX="62.0" layoutY="266.0" text="Departing" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="returnLabel" layoutX="347.0" layoutY="266.0" text="Returning" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="departingDate" editable="false" layoutX="62.0" layoutY="293.0" prefHeight="31.0" prefWidth="216.0" promptText="mm/dd/yyyy" />
+                  <DatePicker fx:id="returningDate" editable="false" layoutX="347.0" layoutY="293.0" prefHeight="31.0" prefWidth="180.0" promptText="mm/dd/yyyy" />
+                  <Label layoutX="62.0" layoutY="358.0" text="Preferred Class" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="classCmboBx" layoutX="346.0" layoutY="356.0" prefHeight="31.0" prefWidth="180.0" promptText="Class" />
+                  <Button fx:id="btn1" layoutX="62.0" layoutY="411.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="216.0" text="Continue">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="pane2" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="118.0" layoutY="66.0" text="First Name" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="firstNameTxtBx" layoutX="345.0" layoutY="64.0" />
+                  <TextField fx:id="lastNameTxtBx" layoutX="345.0" layoutY="105.0" />
+                  <Label layoutX="118.0" layoutY="107.0" text="Last Name" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="ageTxtBx" layoutX="345.0" layoutY="150.0" />
+                  <Label layoutX="168.0" layoutY="153.0" text="Age" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="158.0" layoutY="206.0" text="Meal" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="mealYes" layoutX="345.0" layoutY="209.0" mnemonicParsing="false" text="Yes" textFill="WHITE">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="meal" />
+                     </toggleGroup>
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="mealNo" layoutX="474.0" layoutY="209.0" mnemonicParsing="false" text="No" textFill="WHITE" toggleGroup="$meal">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </RadioButton>
+                  <Button fx:id="btn2" layoutX="110.0" layoutY="300.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="216.0" text="Continue">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="passengerNumLabel" layoutX="118.0" layoutY="35.0" text="Enter Deatils of Passenger" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="pane3" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="116.0" layoutY="66.0" text="Payment Method" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="paymentMethodCmboBx" layoutX="349.0" layoutY="64.0" prefHeight="31.0" prefWidth="187.0" promptText="Payment Method" />
+                  <TextField fx:id="cardNumberTxtBx" layoutX="349.0" layoutY="104.0" promptText="16 digit" />
+                  <Label layoutX="116.0" layoutY="107.0" text="Card Number" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="116.0" layoutY="145.0" text="CVV" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cvvTxtBx" layoutX="349.0" layoutY="142.0" promptText="3 or 4 digit" />
+                  <Label layoutX="116.0" layoutY="205.0" text="Valid Thru" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="cardValid" editable="false" layoutX="349.0" layoutY="197.0" prefHeight="31.0" prefWidth="187.0" />
+                  <Button fx:id="btn3" layoutX="108.0" layoutY="273.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="216.0" text="Continue">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="verifyTxtBx" layoutX="116.0" layoutY="280.0" prefHeight="31.0" prefWidth="417.0" text="Verifying Payment..." textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="116.0" layoutY="30.0" text="Frequent Flyer ID" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="ffidTxtBx" layoutX="350.0" layoutY="30.0" promptText="Enter 5-Digit Number" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="pane4" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <TextArea fx:id="bookingLabel" editable="false" layoutX="24.0" prefHeight="549.0" prefWidth="967.0" />
+                  <Button fx:id="newReservation" layoutX="105.0" layoutY="554.0" mnemonicParsing="false" text="Start New Reservation" />
+                  <Button fx:id="showReservations" layoutX="716.0" layoutY="554.0" mnemonicParsing="false" text="Show All Reservations" />
+                  <Button fx:id="backBtn" layoutX="338.0" layoutY="554.0" mnemonicParsing="false" text="&lt;- Back" />
+                  <Button fx:id="nextBtn" layoutX="571.0" layoutY="554.0" mnemonicParsing="false" text="Next -&gt;" />
+                  <Button fx:id="exitBtn" cancelButton="true" layoutX="716.0" layoutY="554.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="165.0" text="Exit" visible="false" />
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+    </children>
+</AnchorPane>
